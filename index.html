@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIC Insurance Advisor - Secure Your Future</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        lic: {
+                            blue: '#0055A5', // Standard LIC Blue
+                            yellow: '#FDB813', // LIC Accent Yellow
+                            dark: '#1e293b',
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth image loading and minor tweaks */
+        .fade-in { animation: fadeIn 1s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* Prevent layout shift on load */
+        html { overflow-y: scroll; }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Agent Name -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Placeholder for LIC Logo or Personal Logo -->
+                    <div class="w-10 h-10 bg-lic-blue text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
+                        LIC
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-lic-blue leading-tight">[Your Name Here]</h1>
+                        <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Authorized LIC Advisor</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-lic-blue font-medium transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-lic-blue font-medium transition duration-300">About Me</a>
+                    <a href="#plans" class="text-gray-600 hover:text-lic-blue font-medium transition duration-300">Insurance Plans</a>
+                    <a href="#contact" class="text-gray-600 hover:text-lic-blue font-medium transition duration-300">Contact</a>
+                </nav>
+
+                <!-- Call to Action Button (Desktop) -->
+                <div class="hidden md:flex items-center">
+                    <a href="tel:+910000000000" class="bg-lic-yellow hover:bg-yellow-500 text-slate-900 font-bold py-2 px-6 rounded-full shadow transition duration-300 flex items-center gap-2">
+                        <i class="fas fa-phone-alt"></i> [Your Phone No]
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-lic-blue focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-lic-blue hover:bg-gray-50">Home</a>
+                <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-lic-blue hover:bg-gray-50">About</a>
+                <a href="#plans" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-lic-blue hover:bg-gray-50">Plans</a>
+                <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-lic-blue hover:bg-gray-50">Contact</a>
+                <a href="tel:+910000000000" class="block px-3 py-2 mt-4 text-center rounded-md text-base font-bold bg-lic-yellow text-slate-900 shadow">Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-lic-light overflow-hidden">
+            <!-- Background pattern -->
+            <div class="absolute inset-0 z-0 opacity-10">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0055A5" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24 lg:py-32">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Hero Text -->
+                    <div class="text-center md:text-left fade-in">
+                        <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-lic-blue font-semibold text-sm mb-4 border border-blue-200">
+                            Trusted Insurance Partner
+                        </span>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-lic-dark leading-tight mb-6">
+                            Secure Your Family's <span class="text-lic-blue">Future</span> Today.
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto md:mx-0">
+                            Expert guidance on Life Insurance Corporation (LIC) policies tailored to your financial goals, retirement planning, and family security.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#contact" class="bg-lic-blue hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 text-center">
+                                Get Free Consultation
+                            </a>
+                            <a href="#plans" class="bg-white hover:bg-gray-50 text-lic-blue border border-lic-blue font-semibold py-3 px-8 rounded-lg shadow transition duration-300 text-center">
+                                Explore Plans
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div class="relative hidden md:block fade-in">
+                        <div class="absolute inset-0 bg-lic-yellow rounded-full blur-3xl opacity-20 transform translate-x-10 translate-y-10"></div>
+                        <!-- Placeholder Image: Replace src with a professional photo of yourself or a family/insurance themed image -->
+                        <img src="https://placehold.co/600x600/0055A5/FFFFFF?text=Professional\nAgent\nPhoto" alt="Insurance Agent" class="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-2xl border-4 border-white object-cover aspect-square">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-3 border border-gray-100">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Experience</p>
+                                <p class="text-xl font-bold text-lic-dark">10+ Years</p> <!-- Update experience -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-lic-dark mb-4">Why Choose Me as Your Advisor?</h2>
+                    <div class="w-24 h-1 bg-lic-yellow mx-auto rounded"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-slate-50 rounded-xl p-8 text-center shadow-sm border border-slate-100 hover:shadow-md transition duration-300">
+                        <div class="w-16 h-16 bg-blue-100 text-lic-blue rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Personalized Guidance</h3>
+                        <p class="text-gray-600">I don't just sell policies; I analyze your needs to recommend the exact plan that fits your life stage and income.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-slate-50 rounded-xl p-8 text-center shadow-sm border border-slate-100 hover:shadow-md transition duration-300">
+                        <div class="w-16 h-16 bg-blue-100 text-lic-blue rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Claim Settlement Support</h3>
+                        <p class="text-gray-600">My job starts after you buy the policy. I provide end-to-end assistance during maturity or death claim settlements.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-slate-50 rounded-xl p-8 text-center shadow-sm border border-slate-100 hover:shadow-md transition duration-300">
+                        <div class="w-16 h-16 bg-blue-100 text-lic-blue rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Portfolio Review</h3>
+                        <p class="text-gray-600">Regular check-ins to review your insurance portfolio and ensure it keeps up with inflation and changing life goals.</p>
+                    </div>
+                </div>
+                
+                <!-- Detailed About Block -->
+                <div class="mt-16 bg-lic-blue text-white rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                    <!-- Decor -->
+                    <i class="fas fa-quote-right absolute top-8 right-8 text-6xl text-white opacity-10"></i>
+                    
+                    <div class="max-w-3xl relative z-10">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6">Hello, I'm [Your Name Here]</h3>
+                        <p class="text-lg text-blue-100 mb-4 leading-relaxed">
+                            With over [X] years of experience as an authorized LIC agent, I have helped hundreds of families secure their financial future. My approach is rooted in transparency, trust, and a deep understanding of LIC's robust product offerings.
+                        </p>
+                        <p class="text-lg text-blue-100 mb-6 leading-relaxed">
+                            Whether you are planning for your child's education, your retirement, or ensuring your family is protected in your absence, I am here to simplify the process and find the perfect solution.
+                        </p>
+                        
+                        <div class="flex items-center gap-4 border-t border-blue-400 pt-6 mt-6">
+                            <div class="text-left">
+                                <p class="text-sm text-blue-200 uppercase tracking-wide font-semibold">Agency Code</p>
+                                <p class="text-xl font-bold font-mono">[000000]</p>
+                            </div>
+                            <div class="w-px h-10 bg-blue-400 mx-4"></div>
+                            <div class="text-left">
+                                <p class="text-sm text-blue-200 uppercase tracking-wide font-semibold">Branch</p>
+                                <p class="text-xl font-bold">[Branch Name/Code]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plans Section -->
+        <section id="plans" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-lic-dark mb-4">Popular LIC Insurance Plans</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">LIC offers a wide range of products catering to different needs. Here are some of the key categories we can explore together.</p>
+                    <div class="w-24 h-1 bg-lic-yellow mx-auto rounded mt-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Plan Card 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-1 transition duration-300 border border-gray-100">
+                        <div class="h-40 bg-blue-600 flex items-center justify-center text-white relative">
+                            <!-- Image overlay could go here -->
+                            <i class="fas fa-heartbeat text-5xl absolute z-10 opacity-20"></i>
+                            <h3 class="text-2xl font-bold z-20">Term Assurance</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-gray-600 mb-4 h-20">High life cover at a low premium. Ensures absolute financial protection for your family in case of uncertainties.</p>
+                            <ul class="text-sm text-gray-500 mb-4 space-y-2">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Low cost, high cover</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Tax benefits</li>
+                            </ul>
+                            <a href="#contact" class="block w-full text-center text-lic-blue font-semibold border border-lic-blue hover:bg-lic-blue hover:text-white rounded py-2 transition">Inquire Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Plan Card 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-1 transition duration-300 border border-gray-100">
+                        <div class="h-40 bg-indigo-600 flex items-center justify-center text-white relative">
+                            <i class="fas fa-piggy-bank text-5xl absolute z-10 opacity-20"></i>
+                            <h3 class="text-2xl font-bold z-20">Endowment</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-gray-600 mb-4 h-20">A perfect combination of protection and saving. Get a lump sum amount at maturity or death.</p>
+                            <ul class="text-sm text-gray-500 mb-4 space-y-2">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Guaranteed returns</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Loan facility available</li>
+                            </ul>
+                            <a href="#contact" class="block w-full text-center text-lic-blue font-semibold border border-lic-blue hover:bg-lic-blue hover:text-white rounded py-2 transition">Inquire Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Plan Card 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-1 transition duration-300 border border-gray-100">
+                        <div class="h-40 bg-teal-600 flex items-center justify-center text-white relative">
+                            <i class="fas fa-graduation-cap text-5xl absolute z-10 opacity-20"></i>
+                            <h3 class="text-2xl font-bold z-20 text-center px-2">Children's Plans</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-gray-600 mb-4 h-20">Secure your child's future education and marriage milestones. The plan continues even in parent's absence.</p>
+                            <ul class="text-sm text-gray-500 mb-4 space-y-2">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Premium waiver benefit</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Milestone payouts</li>
+                            </ul>
+                            <a href="#contact" class="block w-full text-center text-lic-blue font-semibold border border-lic-blue hover:bg-lic-blue hover:text-white rounded py-2 transition">Inquire Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Plan Card 4 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-1 transition duration-300 border border-gray-100">
+                        <div class="h-40 bg-amber-600 flex items-center justify-center text-white relative">
+                            <i class="fas fa-umbrella-beach text-5xl absolute z-10 opacity-20"></i>
+                            <h3 class="text-2xl font-bold z-20 px-2 text-center">Pension Plans</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-gray-600 mb-4 h-20">Build a retirement corpus to ensure a regular income stream when you stop working.</p>
+                            <ul class="text-sm text-gray-500 mb-4 space-y-2">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Regular annuity income</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Financial independence</li>
+                            </ul>
+                            <a href="#contact" class="block w-full text-center text-lic-blue font-semibold border border-lic-blue hover:bg-lic-blue hover:text-white rounded py-2 transition">Inquire Now</a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-sm text-gray-500 italic">* There are many specific plans like Jeevan Umang, Jeevan Anand, etc. Contact me to find the perfect match.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+                    
+                    <!-- Contact Info / Left Side -->
+                    <div class="bg-lic-blue text-white p-10 md:p-12 lg:w-2/5 flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-2">Get in Touch</h2>
+                            <p class="text-blue-100 mb-8">Fill out the form, or reach out directly using the details below. I offer free, no-obligation consultations.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded bg-blue-600 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm text-blue-200">Call Me</p>
+                                        <a href="tel:+910000000000" class="text-lg font-semibold hover:text-lic-yellow transition">+91 [Your Phone Number]</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded bg-blue-600 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm text-blue-200">WhatsApp</p>
+                                        <a href="https://wa.me/910000000000" target="_blank" class="text-lg font-semibold hover:text-lic-yellow transition">Message on WhatsApp</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded bg-blue-600 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm text-blue-200">Email Me</p>
+                                        <a href="mailto:your.email@example.com" class="text-lg font-semibold hover:text-lic-yellow transition">[Your Email Address]</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded bg-blue-600 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-sm text-blue-200">Office/Location</p>
+                                        <p class="text-lg font-semibold">[Your City, State, Pincode]</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links (Optional) -->
+                        <div class="mt-12 flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-600 hover:bg-lic-yellow hover:text-lic-dark flex items-center justify-center transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-600 hover:bg-lic-yellow hover:text-lic-dark flex items-center justify-center transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form / Right Side -->
+                    <div class="p-10 md:p-12 lg:w-3/5 bg-white">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">Send a Message</h3>
+                        
+                        <!-- Form Structure. Note: Form action needs to be configured with a service like Formspree, or custom backend to send emails. -->
+                        <form id="contactForm" onsubmit="event.preventDefault(); alert('Form submitted! (This is a demo, connect to a backend to send emails)');" class="space-y-6">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                    <input type="text" id="name" name="name" required 
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lic-blue focus:border-transparent outline-none transition bg-slate-50">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required 
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lic-blue focus:border-transparent outline-none transition bg-slate-50">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lic-blue focus:border-transparent outline-none transition bg-slate-50">
+                            </div>
+
+                            <div>
+                                <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">I am interested in</label>
+                                <select id="interest" name="interest" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lic-blue focus:border-transparent outline-none transition bg-slate-50">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="term">Term Life Insurance</option>
+                                    <option value="child">Child Education Plan</option>
+                                    <option value="pension">Retirement/Pension Plan</option>
+                                    <option value="health">Health Insurance / Mediclaim</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lic-blue focus:border-transparent outline-none transition bg-slate-50 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-lic-yellow hover:bg-yellow-500 text-slate-900 font-bold py-4 px-6 rounded-lg shadow-md transition duration-300 text-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Footer Branding -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">[Your Name Here]</h3>
+                    <p class="text-sm mb-4">Authorized LIC Insurance Advisor committed to protecting your family's financial future with integrity and personalized service.</p>
+                    <p class="text-xs text-slate-500">Agency Code: [000000]</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-lic-yellow transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-lic-yellow transition">About Me</a></li>
+                        <li><a href="#plans" class="hover:text-lic-yellow transition">Insurance Plans</a></li>
+                        <li><a href="#contact" class="hover:text-lic-yellow transition">Contact</a></li>
+                        <li><a href="https://licindia.in/" target="_blank" class="hover:text-lic-yellow transition">Official LIC Website <i class="fas fa-external-link-alt text-xs ml-1"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Disclaimer -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Disclaimer</h4>
+                    <p class="text-xs leading-relaxed text-slate-400">
+                        This is a personal website of an authorized LIC Agent. It is not the official website of Life Insurance Corporation of India. Insurance is the subject matter of solicitation. For more details on risk factors, terms and conditions, please read the sales brochure carefully before concluding a sale.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> [Your Name Here]. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
