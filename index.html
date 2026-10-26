@@ -377,7 +377,8 @@
                         <h3 class="text-2xl font-bold text-slate-800 mb-6">Send a Message</h3>
                         
                         <!-- Form Structure. Note: Form action needs to be configured with a service like Formspree, or custom backend to send emails. -->
-                        <form id="contactForm" onsubmit="event.preventDefault(); alert('Form submitted! (This is a demo, connect to a backend to send emails)');" class="space-y-6">
+                        <form id="contactForm"
+      action="https://formspree.io/f/mzeeeegg" method="POST" class="space-y-6">
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
