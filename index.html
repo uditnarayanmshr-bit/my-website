@@ -305,7 +305,79 @@
                 </div>
             </div>
         </section>
+<!-- Premium Calculator Section -->
+        <section id="calculator" class="py-16 md:py-24 bg-lic-light border-t border-slate-200 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-lic-dark mb-4">Quick Premium Estimator</h2>
+                    <p class="text-gray-600">Get an approximate idea of your life insurance premium.</p>
+                    <div class="w-24 h-1 bg-lic-yellow mx-auto rounded mt-6"></div>
+                </div>
 
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Inputs -->
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Age (Years)</label>
+                                <input type="number" id="calc-age" value="30" min="18" max="65" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lic-blue outline-none transition bg-slate-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Sum Assured (₹)</label>
+                                <select id="calc-sum" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lic-blue outline-none transition bg-slate-50">
+                                    <option value="500000">₹ 5,00,000</option>
+                                    <option value="1000000" selected>₹ 10,00,000</option>
+                                    <option value="2500000">₹ 25,00,000</option>
+                                    <option value="5000000">₹ 50,00,000</option>
+                                    <option value="10000000">₹ 1 Crore</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Policy Term (Years)</label>
+                                <input type="number" id="calc-term" value="20" min="10" max="40" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lic-blue outline-none transition bg-slate-50">
+                            </div>
+                            <button onclick="calculatePremium()" class="w-full bg-lic-blue hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300">
+                                Calculate Estimate
+                            </button>
+                        </div>
+
+                        <!-- Output -->
+                        <div class="bg-slate-50 rounded-xl p-8 flex flex-col justify-center items-center text-center border border-slate-200">
+                            <div class="w-16 h-16 bg-blue-100 text-lic-blue rounded-full flex items-center justify-center text-3xl mb-4">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Estimated Premium</h3>
+                            <p class="text-sm text-gray-500 mb-6">Approximate yearly investment</p>
+                            
+                            <div class="text-4xl font-extrabold text-lic-blue mb-2" id="calc-result">₹ 0</div>
+                            <p class="text-sm text-gray-500 italic mt-4">*This is an illustrative figure. Actual premiums vary based on exact plan, GST, riders, and medical history.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calculator Logic -->
+            <script>
+                function calculatePremium() {
+                    const age = parseInt(document.getElementById('calc-age').value);
+                    const sumAssured = parseInt(document.getElementById('calc-sum').value);
+                    const term = parseInt(document.getElementById('calc-term').value);
+                    
+                    if(!age || !sumAssured || !term) return;
+
+                    // Basic illustrative formula for estimation
+                    const base = sumAssured / term;
+                    const risk = sumAssured * (age / 10000);
+                    const totalYearly = base + risk;
+                    
+                    // Format output
+                    const formatted = Math.round(totalYearly).toLocaleString('en-IN');
+                    document.getElementById('calc-result').innerText = '₹ ' + formatted + ' / yr';
+                }
+                // Run once on load
+                window.addEventListener('DOMContentLoaded', calculatePremium);
+            </script>
+        </section>
         <!-- Contact Section -->
         <section id="contact" class="py-16 md:py-24 bg-white relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
